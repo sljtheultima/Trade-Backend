@@ -17,6 +17,11 @@ public class Trade {
     private int quantity;
     private double price;
 
+    public Trade(String ticker, int quantity, double price) {
+        this.ticker = ticker;
+        this.quantity = quantity;
+        this.price = price;
+    }
 
     public Date getCreated() {
         return created;

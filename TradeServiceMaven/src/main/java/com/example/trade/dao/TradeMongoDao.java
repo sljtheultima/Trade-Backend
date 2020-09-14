@@ -10,6 +10,7 @@ import java.util.Optional;
 
 public interface TradeMongoDao extends MongoRepository<Trade, ObjectId>  {
 
-	public List<Trade> findByState(TradeState state);
-	public Optional<List<Trade>> findByTicker(String ticker);
+	Optional<List<Trade>> findByState(TradeState state);
+
+	Optional<List<Trade>> findByTicker(String ticker);
 }
