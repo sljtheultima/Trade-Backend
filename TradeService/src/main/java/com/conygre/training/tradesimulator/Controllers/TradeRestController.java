@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -33,5 +32,9 @@ public class TradeRestController {
     @GetMapping("/getTradeById")
     public ResponseEntity<Trade>getTradeById(@RequestParam ObjectId _id){
         return ResponseEntity.ok().body(tradesim.getTrade(_id).get());
+    }
+    @GetMapping("/getTradeStates")
+    public TradeState[] getTradeStates(){
+        return  TradeState.values();
     }
 }
