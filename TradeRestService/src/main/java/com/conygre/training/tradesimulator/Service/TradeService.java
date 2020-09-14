@@ -20,7 +20,7 @@ public class TradeService {
     public Optional<Trade> getTradeById(ObjectId id){
         return tradeMongoDao.findById(id);
     }
-    public Trade getTradeByTicker(String ticker){
+    public Optional<Trade> getTradeByTicker(String ticker){
         return tradeMongoDao.findByTicker(ticker);
     }
 
