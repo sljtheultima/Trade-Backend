@@ -16,24 +16,6 @@ import java.util.List;
 @CrossOrigin
 public class TradeRestController {
 
-    @Autowired
-    TradeSim tradesim;
 
-    @GetMapping("/trades")
-    public ResponseEntity<List<Trade>> getAllTrades(){
-        return ResponseEntity.ok().body(tradesim.findTradesForProcessing());
-    }
-    @GetMapping("/getTradesByState")
-    public ResponseEntity<List<Trade>> getStateTrades(@RequestParam String state){
-        return ResponseEntity.ok().body(tradesim.getTradeByState(Arrays.stream(TradeState.values()).filter(t-> t.getState().equals(state)).findFirst().get()));
-    }
-    @GetMapping("/getTradeById")
-    public ResponseEntity<Trade>getTradeById(@RequestParam ObjectId _id){
-        return ResponseEntity.ok().body(tradesim.getTrade(_id).get());
-    }
-    @GetMapping("/getTradeStates")
-    public TradeState[] getTradeStates(){
-        return  TradeState.values();
-    }
 
 }

@@ -11,4 +11,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 public interface TradeMongoDao extends MongoRepository<Trade, ObjectId> {
 
 	public List<Trade> findByState(TradeState state);
+	public Trade findByTicker(String ticker);
 }
