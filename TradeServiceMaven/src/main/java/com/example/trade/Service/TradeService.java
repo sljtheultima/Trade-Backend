@@ -21,18 +21,21 @@ public class TradeService {
         return tradeMongoDao.findAll();
     }
 
-    public Optional<Trade> getTradeById(ObjectId id){
+    public List<Trade> getTradeById(String id){
         return tradeMongoDao.findById(id);
     }
 
-    public Optional<List<Trade>> getTradeByState(TradeState state){
+    public List<Trade> getTradeByState(String state){
         return tradeMongoDao.findByState(state);
     }
 
-    public Optional<List<Trade>> getTradeByTicker(String ticker){
+    public List<Trade> getTradeByTicker(String ticker){
         return tradeMongoDao.findByTicker(ticker);
     }
 
+    public List<Trade> getTradeByType(String type){
+        return tradeMongoDao.findByType(type);
+    }
 
 
 }
