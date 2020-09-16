@@ -6,6 +6,6 @@ EXPOSE 8080
 
 #ENV TRADE_URI=mongodb://mymongodb:27017/tradedb
 
-RUN sh -c 'echo spring.data.mongodb.uri=mongodb://mymongodb:27017/tradedb > application.properties'
+RUN sh -c 'echo spring.data.mongodb.uri=mongodb://tradedb:27017/trade > application.properties'
 
 ENTRYPOINT ["java", "-jar", "/app.jar"]
